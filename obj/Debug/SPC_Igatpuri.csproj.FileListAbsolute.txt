@@ -1,0 +1,153 @@
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\bin\Debug\SPC_Igatpuri.exe.config
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\bin\Debug\SPC_Igatpuri.exe
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\bin\Debug\SPC_Igatpuri.pdb
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmAttributeInput.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmCharts.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmEventChar.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmEventSelection.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmInspection.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmKeyboard.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmLogin.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmModify.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmRemovePartNo.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmRetake.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmScanPartNo.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmSetSPCStation.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.ListChar.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.ListQueue.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.ListTemplate.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.MDISPC.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.Properties.Resources.resources
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.exe
+C:\Users\Admin\source\repos\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.pdb
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\bin\Debug\SPC_Igatpuri.exe.config
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\bin\Debug\SPC_Igatpuri.exe
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\bin\Debug\SPC_Igatpuri.pdb
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.csprojAssemblyReference.cache
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmAttributeInput.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmCharts.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmEventChar.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmEventSelection.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmInspection.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmKeyboard.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmLogin.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmModify.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmRemovePartNo.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmRetake.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmScanPartNo.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmSetSPCStation.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.ListChar.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.ListQueue.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.ListTemplate.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.MDISPC.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.Properties.Resources.resources
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.csproj.GenerateResource.cache
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.csproj.CoreCompileInputs.cache
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.exe
+D:\SPC_Pune_Original\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.pdb
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\bin\Debug\SPC_Igatpuri.exe.config
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\bin\Debug\SPC_Igatpuri.exe
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\bin\Debug\SPC_Igatpuri.pdb
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.csprojAssemblyReference.cache
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmAttributeInput.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmCharts.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmEventChar.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmEventSelection.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmInspection.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmKeyboard.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmLogin.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmModify.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmRemovePartNo.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmRetake.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmScanPartNo.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmSetSPCStation.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.ListChar.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.ListQueue.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.ListTemplate.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.MDISPC.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.Properties.Resources.resources
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.csproj.GenerateResource.cache
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.csproj.CoreCompileInputs.cache
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.exe
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.pdb
+D:\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmShiftInfo.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\bin\Debug\SPC_Igatpuri.exe.config
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\bin\Debug\SPC_Igatpuri.exe
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\bin\Debug\SPC_Igatpuri.pdb
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.csprojAssemblyReference.cache
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmAttributeInput.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmCharts.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmEventChar.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmEventSelection.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmInspection.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmKeyboard.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmLogin.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmModify.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmRemovePartNo.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmRetake.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmScanPartNo.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmSetSPCStation.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.ListChar.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.ListQueue.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.ListTemplate.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.MDISPC.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.Properties.Resources.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmShiftInfo.resources
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.csproj.GenerateResource.cache
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.csproj.CoreCompileInputs.cache
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.exe
+D:\Rutuja_SPC_Projects\Rutuja-SPC\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.pdb
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\bin\Debug\SPC_Igatpuri.exe.config
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\bin\Debug\SPC_Igatpuri.exe
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\bin\Debug\SPC_Igatpuri.pdb
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.csprojAssemblyReference.cache
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmAttributeInput.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmCharts.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmEventChar.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmEventSelection.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmInspection.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmKeyboard.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmLogin.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmModify.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmRemovePartNo.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmRetake.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmScanPartNo.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmSetSPCStation.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.ListChar.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.ListQueue.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.ListTemplate.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.MDISPC.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.Properties.Resources.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.frmShiftInfo.resources
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.csproj.GenerateResource.cache
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.csproj.CoreCompileInputs.cache
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.exe
+D:\SPC_new & Wirerings\SPC_KDL\SPC_KDL\SPC_Igatpuri_Amendment\SPC_Igatpuri\obj\Debug\SPC_Igatpuri.pdb
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.exe
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.pdb
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\bin\Debug\SPC_Igatpuri.exe.config
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\bin\Debug\SPC_Igatpuri.exe
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\bin\Debug\SPC_Igatpuri.pdb
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.frmAttributeInput.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.frmCharts.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.frmEventChar.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.frmEventSelection.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.frmInspection.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.frmKeyboard.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.frmLogin.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.frmModify.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.frmRemovePartNo.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.frmRetake.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.frmScanPartNo.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.frmSetSPCStation.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.ListChar.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.ListQueue.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.ListTemplate.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.MDISPC.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.Properties.Resources.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.frmShiftInfo.resources
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.csproj.GenerateResource.cache
+D:\Kranti\SPC_KDL\SPC_KDL\SPC_KDL\obj\Debug\SPC_Igatpuri.csproj.CoreCompileInputs.cache
