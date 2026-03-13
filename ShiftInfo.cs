@@ -14,14 +14,14 @@ namespace SPC_KDL
     public partial class frmShiftInfo : Form
     {
         //  DBConnect call = new DBConnect();
-        static SqlConnection gcon = new SqlConnection();
+        SqlConnection gcon = new SqlConnection();
         DataTable dt;
         SqlCommand Cmd;
         SqlParameter param;
         SqlDataAdapter da;
 
-        public static DataTable dtShifts = new DataTable();
-        public static DataTable dtMachines = new DataTable();
+        private readonly DataTable dtShifts = new DataTable();
+        private readonly DataTable dtMachines = new DataTable();
         public frmShiftInfo()
         {
             InitializeComponent();
@@ -54,8 +54,8 @@ namespace SPC_KDL
 
         private void ShiftCombo()
         {
-            dtShifts = CommonBL.getCombo(Program.userID, 6, Program.stationID.ToString());
-            cmbShift.DataSource = dtShifts;
+            dtShifts.Clear();
+            dtShifts.Merge(CommonBL.getCombo(Program.userID, 6, Program.stationID.ToString())); cmbShift.DataSource = dtShifts;
             cmbShift.DisplayMember = "ShiftName";
             cmbShift.ValueMember = "ID";
         }

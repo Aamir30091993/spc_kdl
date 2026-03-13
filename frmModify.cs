@@ -19,11 +19,13 @@ namespace SPC_KDL
         }
 
         #region VariableDeclaration
-        public static DataTable dtPartNo = new DataTable();
-        public static DataTable dtTemplates = new DataTable();
-        public static DataTable dtCharacteristics= new DataTable();
-        public static DataTable dtMachines = new DataTable();
-        public static DataTable dtReading = new DataTable(); 
+        private readonly DataTable dtPartNo = new DataTable();
+        private readonly DataTable dtTemplates = new DataTable();
+        private readonly DataTable dtCharacteristics = new DataTable();
+        private readonly DataTable dtMachines = new DataTable();
+        private readonly DataTable dtReading = new DataTable();
+        private readonly object _lock = new object();
+
         private bool goForSaveUpdate = false;
         #endregion
         private void frmModify_Load(object sender, EventArgs e)
@@ -54,7 +56,9 @@ namespace SPC_KDL
         }
         private void TemplateCombo()
         {
-            dtTemplates = CommonBL.getCombo(Program.userID, 5, Program.stationID.ToString());
+            //dtTemplates = CommonBL.getCombo(Program.userID, 5, Program.stationID.ToString());
+            lock (_lock) { dtTemplates.Clear(); dtTemplates.Merge(CommonBL.getCombo(Program.userID, 5, Program.stationID.ToString())); }
+
             cmbTemplate.DataSource = dtTemplates;
             cmbTemplate.DisplayMember = "TemplateName";
             cmbTemplate.ValueMember = "ID";
@@ -72,7 +76,9 @@ namespace SPC_KDL
         }
         private void MachineCombo()
         {
-            dtMachines = CommonBL.getCombo(Program.userID, 7, Program.stationID.ToString());
+            //dtMachines = CommonBL.getCombo(Program.userID, 7, Program.stationID.ToString());
+            lock (_lock) { dtMachines.Clear(); dtMachines.Merge(CommonBL.getCombo(Program.userID, 7, Program.stationID.ToString())); }
+
             cmbMachineNo.DataSource = dtMachines;
             cmbMachineNo.DisplayMember = "MachineNo";
             cmbMachineNo.ValueMember = "ID";
@@ -85,7 +91,9 @@ namespace SPC_KDL
             {
                 cmbMachineNo.SelectedValue = Program.CurrentMachineID;
 
-                dtPartNo = GetModifyData_PartNo();
+                //dtPartNo = GetModifyData_PartNo();
+                lock (_lock) { dtPartNo.Clear(); dtPartNo.Merge(GetModifyData_PartNo()); }
+
                 cmbPartNo.DataSource = dtPartNo;
                 cmbPartNo.DisplayMember = "PartNo";
                 cmbPartNo.SelectedIndex = -1;
@@ -116,10 +124,8 @@ namespace SPC_KDL
                   new SqlParameter{ParameterName="@ActionID",SqlDbType =SqlDbType.Int, Value =  1}, 
                   //outParam_1
               };
+            return CommonBL.GetModifyData("sp_getDataToModify", parameters);
 
-            DataTable dt = new DataTable();
-            dt = CommonBL.GetModifyData("sp_getDataToModify", parameters);
-            return dt;
         }
         private DataTable GetModifyData_Characteristics()
         {
@@ -133,9 +139,8 @@ namespace SPC_KDL
                   //outParam_1
               };
 
-            DataTable dt = new DataTable();
-            dt = CommonBL.GetModifyData("sp_getDataToModify", parameters);
-            return dt;
+            return CommonBL.GetModifyData("sp_getDataToModify", parameters);
+
         }
         private DataTable GetModifyData_Reading()
         {
@@ -150,9 +155,8 @@ namespace SPC_KDL
                   //outParam_1
               };
 
-            DataTable dt = new DataTable();
-            dt = CommonBL.GetModifyData("sp_getDataToModify", parameters);
-            return dt;
+            return CommonBL.GetModifyData("sp_getDataToModify", parameters);
+
         }
         private void cmbTemplate_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -179,7 +183,10 @@ namespace SPC_KDL
                 }
                 else
                 {
-                    dtPartNo = GetModifyData_PartNo();
+                    //dtPartNo = GetModifyData_PartNo();
+                    lock (_lock) { dtPartNo.Clear(); dtPartNo.Merge(GetModifyData_PartNo()); }
+
+
                     cmbPartNo.DataSource = dtPartNo;
                     cmbPartNo.DisplayMember = "PartNo";
                     cmbPartNo.SelectedIndex = -1; 
@@ -192,7 +199,8 @@ namespace SPC_KDL
         {
             if (cmbTemplate.Text != "" && cmbMachineNo.Text != "" && cmbPartNo.Text != "")
             {
-                dtCharacteristics = GetModifyData_Characteristics();
+                //dtCharacteristics = GetModifyData_Characteristics();
+                lock (_lock) { dtCharacteristics.Clear(); dtCharacteristics.Merge(GetModifyData_Characteristics()); }
                 cmbCharacteristics.DataSource = dtCharacteristics;
                 cmbCharacteristics.DisplayMember = "CharacteristicName";
                 cmbCharacteristics.ValueMember = "ID";
@@ -226,7 +234,8 @@ namespace SPC_KDL
                 //cmbCharacteristics.ValueMember = "ID";
                 //cmbCharacteristics.SelectedIndex = -1;
 
-                dtReading = GetModifyData_Reading();
+                //dtReading = GetModifyData_Reading();
+                lock (_lock) { dtReading.Clear(); dtReading.Merge(GetModifyData_Reading()); }
 
                 txtReading.Text = dtReading.Rows[0][0].ToString();   
             }
