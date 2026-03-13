@@ -22,10 +22,12 @@ namespace SPC_KDL
 
         DataTable dtViewDatatable;
 
-        public static DataTable dtTemplates = new DataTable();
-        public static DataTable dtMachines = new DataTable();
-        public static DataTable dtEvents = new DataTable();
-        public static DataTable dtCharacteristics = new DataTable();
+        private readonly DataTable dtTemplates = new DataTable();
+        private readonly DataTable dtMachines = new DataTable();
+        private readonly DataTable dtEvents = new DataTable();
+        private readonly DataTable dtCharacteristics = new DataTable();
+        private readonly object _lock = new object();
+
 
         double xUL, xLL, xM, xUCL, xLCL;
         double xMinReading, xMaxReading, rMinReading, rMaxReading;
@@ -131,7 +133,8 @@ namespace SPC_KDL
         }
         private void TemplateCombo()
         {
-            dtTemplates = CommonBL.getCombo(Program.userID, 5, Program.stationID.ToString());
+            //dtTemplates = CommonBL.getCombo(Program.userID, 5, Program.stationID.ToString());
+            lock (_lock) { dtTemplates.Clear(); dtTemplates.Merge(CommonBL.getCombo(Program.userID, 5, Program.stationID.ToString())); }
             cmbTemplate.DataSource = dtTemplates;
             cmbTemplate.DisplayMember = "TemplateName";
             cmbTemplate.ValueMember = "ID";
@@ -238,7 +241,8 @@ namespace SPC_KDL
         }
         private void MachineCombo()
         {
-            dtMachines = CommonBL.getCombo(Program.userID, 23, Program.stationID.ToString());
+            //dtMachines = CommonBL.getCombo(Program.userID, 23, Program.stationID.ToString());
+            lock (_lock) { dtMachines.Clear(); dtMachines.Merge(CommonBL.getCombo(Program.userID, 23, Program.stationID.ToString())); }
             cmbMachineNo.DataSource = dtMachines;
             cmbMachineNo.DisplayMember = "MachineName";
             cmbMachineNo.ValueMember = "ID";
@@ -247,7 +251,9 @@ namespace SPC_KDL
         }
         private void EventCombo()
         {
-            dtEvents = CommonBL.getCombo(Program.userID, 26, Program.stationID.ToString());
+            //dtEvents = CommonBL.getCombo(Program.userID, 26, Program.stationID.ToString());
+            lock (_lock) { dtEvents.Clear(); dtEvents.Merge(CommonBL.getCombo(Program.userID, 26, Program.stationID.ToString())); }
+
             chklstbxEvents.DataSource = dtEvents;
             chklstbxEvents.DisplayMember = "Name";
             chklstbxEvents.ValueMember = "ID";
@@ -259,7 +265,8 @@ namespace SPC_KDL
         {
             if (cmbTemplate.Text != "")
             {
-                dtCharacteristics = CommonBL.getCombo(Program.userID, 18, cmbTemplate.SelectedValue.ToString());
+                //dtCharacteristics = CommonBL.getCombo(Program.userID, 18, cmbTemplate.SelectedValue.ToString());
+                lock (_lock) { dtCharacteristics.Clear(); dtCharacteristics.Merge(CommonBL.getCombo(Program.userID, 18, cmbTemplate.SelectedValue.ToString())); }
                 chklstbxChar.DataSource = dtCharacteristics;
                 chklstbxChar.DisplayMember = "CharacteristicsName";
                 chklstbxChar.ValueMember = "ID";
@@ -974,9 +981,8 @@ namespace SPC_KDL
 
             //controlChartClicked = 0;
 
-            DataSet ds = new DataSet();
-            ds = CommonBL.GetTemplateQueueData("sp_GetChartData", parameters); //sp_GetChartData
-            return ds;
+            return CommonBL.GetTemplateQueueData("sp_GetChartData", parameters); //sp_GetChartData
+          
 
         }
         private void runChart()
@@ -1680,9 +1686,8 @@ namespace SPC_KDL
 
             //controlChartClicked = 0;
 
-            DataTable dt = new DataTable();
-            dt = CommonBL.GetDataTable("sp_GetChartData_Export", parameters); //sp_GetChartData
-            return dt;
+            return CommonBL.GetDataTable("sp_GetChartData_Export", parameters); //sp_GetChartData
+           
         }
     }
 }

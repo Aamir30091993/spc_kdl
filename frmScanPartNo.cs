@@ -17,20 +17,18 @@ namespace SPC_KDL
 
         #region VariableDeclaration
 
-        public static DataTable dtTemplates = new DataTable();
-        public static DataTable dtEvents = new DataTable();
-        public static DataTable dtShifts = new DataTable();
-        public static DataTable dtMachines = new DataTable();
-        public static DataTable dtPallets = new DataTable();
+        private readonly DataTable dtTemplates = new DataTable();
+        private readonly DataTable dtEvents = new DataTable();
+        private readonly DataTable dtShifts = new DataTable();
+        private readonly DataTable dtMachines = new DataTable();
+        private readonly DataTable dtPallets = new DataTable();
+        private readonly DataTable dtCastingSupplier = new DataTable();
+        private readonly DataTable dtSemiFinishSupplier = new DataTable();
+        private readonly DataTable dtConfig = new DataTable();
+        private readonly DataTable dtDotCombo = new DataTable();
+        private readonly DataTable dtDotComboAll = new DataTable();
+        private readonly object _lock = new object();
 
-        //26/05/23
-        public static DataTable dtCastingSupplier = new DataTable();
-        public static DataTable dtSemiFinishSupplier = new DataTable();
-        //26/05/23
-
-        public static DataTable dtConfig = new DataTable();
-        public static DataTable dtDotCombo = new DataTable();
-        public static DataTable dtDotComboAll = new DataTable();
         int machineWisePalletWise = 0;
         int templateWiseModelWise = 0;
 
@@ -43,7 +41,9 @@ namespace SPC_KDL
         private void frmScanPartNo_Load(object sender, EventArgs e)
         {
             //Aamir - 18/01/2023 - Check Config
-           dtConfig = CheckConfig();
+            //dtConfig = CheckConfig();
+            lock (_lock) { dtConfig.Clear(); dtConfig.Merge(CheckConfig()); }
+
 
             machineWisePalletWise = Convert.ToInt32(dtConfig.Rows[0][0].ToString());
             templateWiseModelWise = Convert.ToInt32(dtConfig.Rows[0][1].ToString());
@@ -205,7 +205,8 @@ namespace SPC_KDL
         }
         private void TemplateCombo()
         {
-            dtTemplates = CommonBL.getCombo(Program.userID, 5, Program.stationID.ToString());
+            lock (_lock) { dtTemplates.Clear(); dtTemplates.Merge(CommonBL.getCombo(Program.userID, 5, Program.stationID.ToString())); }
+            //dtTemplates = CommonBL.getCombo(Program.userID, 5, Program.stationID.ToString());
             cmbTemplate.DataSource = dtTemplates;
             cmbTemplate.DisplayMember = "TemplateName";
             cmbTemplate.ValueMember = "ID";
@@ -221,7 +222,8 @@ namespace SPC_KDL
         }
         private void EventCombo()
         {
-            dtEvents= CommonBL.getCombo(Program.userID, 2, Program.stationID.ToString());
+            lock (_lock) { dtEvents.Clear(); dtEvents.Merge(CommonBL.getCombo(Program.userID, 2, Program.stationID.ToString())); }
+            //dtEvents = CommonBL.getCombo(Program.userID, 2, Program.stationID.ToString());
             cmbEvent.DataSource = dtEvents;
             cmbEvent.DisplayMember = "Name";
             cmbEvent.ValueMember = "ID";
@@ -237,7 +239,8 @@ namespace SPC_KDL
         }
         public void ShiftCombo()
         {
-            dtShifts = CommonBL.getCombo(Program.userID, 6, Program.stationID.ToString());
+            lock (_lock) { dtShifts.Clear(); dtShifts.Merge(CommonBL.getCombo(Program.userID, 6, Program.stationID.ToString())); }
+            //dtShifts = CommonBL.getCombo(Program.userID, 6, Program.stationID.ToString());
             cmbShift.DataSource = dtShifts;
             cmbShift.DisplayMember = "ShiftName";
             cmbShift.ValueMember = "ID";
@@ -245,14 +248,16 @@ namespace SPC_KDL
         
         public void CastingSupplierCombo()//26/05/23
         {
-            dtCastingSupplier = CommonBL.getCombo(Program.userID, 30, Program.stationID.ToString());
+            lock (_lock) { dtCastingSupplier.Clear(); dtCastingSupplier.Merge(CommonBL.getCombo(Program.userID, 30, Program.stationID.ToString())); }
+            //dtCastingSupplier = CommonBL.getCombo(Program.userID, 30, Program.stationID.ToString());
             cmbCastingSupplierwise.DataSource = dtCastingSupplier;
             cmbCastingSupplierwise.DisplayMember = "Name";
             cmbCastingSupplierwise.ValueMember = "ID";
         }
         public void SemiFinishSupplierCombo()//26/05/23
         {
-            dtSemiFinishSupplier = CommonBL.getCombo(Program.userID, 31, Program.stationID.ToString());
+            lock (_lock) { dtSemiFinishSupplier.Clear(); dtSemiFinishSupplier.Merge(CommonBL.getCombo(Program.userID, 31, Program.stationID.ToString())); }
+            //dtSemiFinishSupplier = CommonBL.getCombo(Program.userID, 31, Program.stationID.ToString());
             cmbSemifinishSupplierwise.DataSource = dtSemiFinishSupplier;
             cmbSemifinishSupplierwise.DisplayMember = "Name";
             cmbSemifinishSupplierwise.ValueMember = "ID";
@@ -260,7 +265,8 @@ namespace SPC_KDL
         
         private void MachineCombo()
         {
-            dtMachines = CommonBL.getCombo(Program.userID, 7, Program.stationID.ToString());
+            lock (_lock) { dtMachines.Clear(); dtMachines.Merge(CommonBL.getCombo(Program.userID, 7, Program.stationID.ToString())); }
+            //dtMachines = CommonBL.getCombo(Program.userID, 7, Program.stationID.ToString());
             cmbMachineNo.DataSource = dtMachines;
             cmbMachineNo.DisplayMember = "MachineNo";
             cmbMachineNo.ValueMember = "ID";
@@ -277,7 +283,8 @@ namespace SPC_KDL
         }
         private void PalletCombo()
         {
-            dtPallets = CommonBL.getCombo(Program.userID, 3, Program.stationID.ToString());
+            lock (_lock) { dtPallets.Clear(); dtPallets.Merge(CommonBL.getCombo(Program.userID, 3, Program.stationID.ToString())); }
+            //dtPallets = CommonBL.getCombo(Program.userID, 3, Program.stationID.ToString());
             cmbPalletNo.DataSource = dtPallets;
             cmbPalletNo  .DisplayMember = "PalletNo";
             cmbPalletNo.ValueMember = "ID";
@@ -711,8 +718,8 @@ namespace SPC_KDL
                                           //outParam_1
                                         };
 
-                                    DataTable dt = new DataTable();
-                                    dt = CommonBL.GetModifyData("pgetTemplate", parameters);
+                                    var dt = CommonBL.GetModifyData("pgetTemplate", parameters);
+
 
                                     if (dt.Rows.Count > 0)
                                     {
@@ -760,35 +767,63 @@ namespace SPC_KDL
                   //outParam_1
               };
 
-            DataTable dt = new DataTable();
-            dt = CommonBL.GetModifyData("sp_check_config", parameters);
-            return dt;
+            return CommonBL.GetModifyData("sp_check_config", parameters);
+
 
         }
 
+        //private void DotCombo()
+        //{
+        //    //dtDotComboAll = CommonBL.getCombo(Program.userID, 29, Program.stationID.ToString(), txtModelNo.Text);
+
+        //    //  DataRow[] dr = dtDotComboAll.Select("dotID and dotName");
+        //    lock (_lock)
+        //    {
+        //        dtDotComboAll.Clear();
+        //        dtDotComboAll.Merge(CommonBL.getCombo(Program.userID, 29, Program.stationID.ToString(), txtModelNo.Text));
+
+        //        DataTable temp = new DataView(dtDotComboAll).ToTable(false, selectedColumns);
+        //        dtDotCombo.Clear();
+        //        dtDotCombo.Merge(temp);
+        //    }
+        //    string[] selectedColumns = new[] { "dotID", "dotName" };
+
+        //     //dtDotCombo = new DataView(dtDotComboAll).ToTable(false, selectedColumns);
+
+        //    if (dtDotCombo.Rows.Count > 0)
+        //    {
+        //        //dtDotCombo = dr.CopyToDataTable();
+
+        //        cmbDotSpec.DataSource = dtDotCombo;
+        //        cmbDotSpec.DisplayMember = "dotName";
+        //        cmbDotSpec.ValueMember = "dotID";
+
+        //        cmbDotSpec.SelectedIndex = -1;
+        //    }
+
+
+
+        //}
         private void DotCombo()
         {
-            dtDotComboAll = CommonBL.getCombo(Program.userID, 29, Program.stationID.ToString(), txtModelNo.Text);
-
-            //  DataRow[] dr = dtDotComboAll.Select("dotID and dotName");
-
             string[] selectedColumns = new[] { "dotID", "dotName" };
 
-             dtDotCombo = new DataView(dtDotComboAll).ToTable(false, selectedColumns);
+            lock (_lock)
+            {
+                dtDotComboAll.Clear();
+                dtDotComboAll.Merge(CommonBL.getCombo(Program.userID, 29, Program.stationID.ToString(), txtModelNo.Text));
+                DataTable temp = new DataView(dtDotComboAll).ToTable(false, selectedColumns);
+                dtDotCombo.Clear();
+                dtDotCombo.Merge(temp);
+            }
 
             if (dtDotCombo.Rows.Count > 0)
             {
-                //dtDotCombo = dr.CopyToDataTable();
-
                 cmbDotSpec.DataSource = dtDotCombo;
                 cmbDotSpec.DisplayMember = "dotName";
                 cmbDotSpec.ValueMember = "dotID";
-
                 cmbDotSpec.SelectedIndex = -1;
             }
-
-
-            
         }
 
         private void cmbDotSpec_SelectionChangeCommitted(object sender, EventArgs e)

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Security;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SPC_KDL
@@ -13,6 +14,59 @@ namespace SPC_KDL
     {
         DBConnect call = new DBConnect();
         static SqlConnection conn = new SqlConnection();
+
+        //added by kanhaiya 07/03/2026
+        private static readonly HashSet<string> _allowedProcedures = new HashSet<string>(
+             StringComparer.OrdinalIgnoreCase)   // case-insensitive match
+        {
+            // insert / update / delete
+            "spInsert_EventInspectionData",
+            "spInsert_InspectionData",
+            "Sp_RetakeDAta",
+            "Sp_UpdateModifyData",
+            "Sp_RemovePartInQueue",
+            "spInsert_TracebilityData",
+
+            // GetTemplateQueueData calls
+            "sp_GetChartData",
+            "spGetTempate_List",
+            "spGetStation_Machine_List",
+            "spGetTemplate_InspectionHdrData",
+            "sp_GetChartData_Win",
+
+            // GetModifyData calls
+            "sp_getDataForEvent",
+            "sp_GetEventMsg",
+            "sp_GetChartData_DE",
+            "sp_getDataToModify",
+            "sp_getDataToRemovePartInspectionQueue",
+            "pgetTemplate",
+            "sp_check_config",
+
+            // GetDataTable calls
+            "sp_GetChartData_Export",
+
+            // add every other SP your app calls here
+        };
+        private static void ValidateProcedureName(string spName)
+        {
+            if (string.IsNullOrWhiteSpace(spName) || !_allowedProcedures.Contains(spName))
+                throw new SecurityException(
+                    $"Stored procedure '{spName}' is not permitted. " +
+                    "Add it to the whitelist in CommonDL if it is a valid procedure.");
+        }
+        private static SqlConnection GetOpenConnection()
+        {
+            var c = DBConnect.connect();
+            if (c.State == ConnectionState.Closed) c.Open();
+            return c;
+        }
+
+        private static void CloseConnection(SqlConnection c)
+        {
+            if (c != null && c.State == ConnectionState.Open) c.Close();
+        }
+
         public static DataTable getCombo(int UserID, int ActionID, string keyValue, string ModelNo = "")
 
         {
@@ -50,6 +104,7 @@ namespace SPC_KDL
         }
         public static int InsertData(string spName, SqlParameter[] paramters)
         {
+            ValidateProcedureName(spName);
             int _returValue = 0;
             conn = DBConnect.connect();
             try
@@ -75,8 +130,11 @@ namespace SPC_KDL
             }
             return _returValue;
         }
+        
+
         public static DataSet GetTemplateQueueData(string spName, SqlParameter[] parameters)
         {
+            ValidateProcedureName(spName);
             conn = DBConnect.connect();
             DataSet dsLocal = new DataSet();
             try
@@ -106,6 +164,7 @@ namespace SPC_KDL
         }
         public static DataTable  GetModifyData(string spName, SqlParameter[] parameters)
         {
+            ValidateProcedureName(spName);
             conn = DBConnect.connect();
             // DataSet dsLocal = new DataSet();
             DataTable dtLocal = new DataTable(); 
@@ -136,6 +195,7 @@ namespace SPC_KDL
         }
         public static DataTable GetDatatable(string spName, SqlParameter[] parameters)
         {
+            ValidateProcedureName(spName);
             conn = DBConnect.connect();
             // DataSet dsLocal = new DataSet();
             DataTable dtLocal = new DataTable();

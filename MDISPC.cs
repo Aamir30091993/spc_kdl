@@ -15,7 +15,7 @@ namespace SPC_KDL
     public partial class MDISPC : Form
     {
         //23/05/23
-        static SqlConnection gcon = new SqlConnection();
+        SqlConnection gcon = new SqlConnection();
         DataTable dt;
         SqlCommand Cmd;
         SqlParameter param, paramShiftInfoEnable;

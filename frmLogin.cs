@@ -16,7 +16,7 @@ namespace SPC_KDL
     public partial class frmLogin : Form
     {
       //  DBConnect call = new DBConnect();
-       static   SqlConnection gcon = new SqlConnection();
+        SqlConnection gcon = new SqlConnection();
         DataTable dt;
         SqlCommand  Cmd, Cmd1;
         SqlParameter param, paramErrMsg, param1, paramErrMsg1, paramStationID ;

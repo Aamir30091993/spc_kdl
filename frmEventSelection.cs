@@ -20,8 +20,8 @@ namespace SPC_KDL
         }
 
         #region VariableDeclaration
-        public static DataTable dtEventsSelection = new DataTable();
-        public static DataTable dtEventsMessage = new DataTable();
+        private readonly DataTable dtEventsSelection = new DataTable();
+        private readonly DataTable dtEventsMessage = new DataTable();
         #endregion
 
         #region FormEvents
@@ -62,18 +62,20 @@ namespace SPC_KDL
         #region Functions
         private void EventSelectionCombo()
         {
-            dtEventsSelection = CommonBL.getCombo(Program.userID, 2, Program.stationID.ToString());
+            dtEventsSelection.Clear();
+            dtEventsSelection.Merge(CommonBL.getCombo(Program.userID, 2, Program.stationID.ToString()));  // leave for now
             cmbEvent.DataSource = dtEventsSelection;
             cmbEvent.DisplayMember = "Name";
             cmbEvent.ValueMember = "ID";
-            cmbEvent.SelectedIndex = -1; //TODO
+            cmbEvent.SelectedIndex = -1;
         }
         #endregion
         private void cmbEvent_SelectionChangeCommitted(object sender, EventArgs e)
         {
             if (cmbEvent.Text != "")
             {
-                dtEventsMessage = GetEventMessage();
+                dtEventsMessage.Clear();
+                dtEventsMessage.Merge(GetEventMessage());
                 lblMessageEvent.Text = dtEventsMessage.Rows[0][0].ToString();
             }
         }
@@ -86,9 +88,8 @@ namespace SPC_KDL
                   //outParam_1
               };
 
-            DataTable dt = new DataTable();
-            dt = CommonBL.GetModifyData("sp_GetEventMsg", parameters);
-            return dt;
+            return CommonBL.GetModifyData("sp_GetEventMsg", parameters);
+      
         }
 
         private void frmEventSelection_FormClosing(object sender, FormClosingEventArgs e)
