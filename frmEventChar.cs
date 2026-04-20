@@ -19,12 +19,13 @@ namespace SPC_KDL
         }
 
         #region VariableDeclaration
-        public static DataTable dtEvents = new DataTable();
-        public static DataTable dtTemplates = new DataTable();
-        public static DataTable dtCharacteristics = new DataTable();
-        public static DataTable dtMachines = new DataTable();
-        public static DataTable dtPallets = new DataTable();
-        public static DataTable dtShifts = new DataTable();
+        private readonly DataTable dtEvents = new DataTable();
+        private readonly DataTable dtTemplates = new DataTable();
+        private readonly DataTable dtCharacteristics = new DataTable();
+        private readonly DataTable dtMachines = new DataTable();
+        private readonly DataTable dtPallets = new DataTable();
+        private readonly DataTable dtShifts = new DataTable();
+        private readonly object _lock = new object();
         private bool goForSaveUpdate = false;
         #endregion
         private void frmEventChar_Load(object sender, EventArgs e)
@@ -57,7 +58,12 @@ namespace SPC_KDL
         }
         private void TemplateCombo()
         {
-            dtTemplates = CommonBL.getCombo(Program.userID, 5, Program.stationID.ToString());
+            lock (_lock)
+            {
+                dtTemplates.Clear();
+                dtTemplates.Merge(CommonBL.getCombo(Program.userID, 5, Program.stationID.ToString()));  // ✅ refills safely
+            }
+            //dtTemplates = CommonBL.getCombo(Program.userID, 5, Program.stationID.ToString());
             cmbTemplate.DataSource = dtTemplates;
             cmbTemplate.DisplayMember = "TemplateName";
             cmbTemplate.ValueMember = "ID";
@@ -74,7 +80,12 @@ namespace SPC_KDL
         }
         private void MachineCombo()
         {
-            dtMachines = CommonBL.getCombo(Program.userID, 7, Program.stationID.ToString());
+            lock (_lock)
+            {
+                dtMachines.Clear();
+                dtMachines.Merge(CommonBL.getCombo(Program.userID, 7, Program.stationID.ToString()));  // ✅ refills safely
+            }
+            //dtMachines = CommonBL.getCombo(Program.userID, 7, Program.stationID.ToString());
             cmbMachine.DataSource = dtMachines;
             cmbMachine.DisplayMember = "MachineNo";
             cmbMachine.ValueMember = "ID";
@@ -102,13 +113,18 @@ namespace SPC_KDL
                   //outParam_1
               };
 
-            DataTable dt = new DataTable();
-            dt = CommonBL.GetModifyData("sp_getDataForEvent", parameters);
-            return dt;
+            //return CommonBL.GetModifyData("sp_getDataForEvent", parameters);
+            return CommonBL.GetModifyData(StoredProcedure.GetDataForEvent, parameters);
+
         }
         private void PalletCombo()
         {
-            dtPallets = CommonBL.getCombo(Program.userID, 3, Program.stationID.ToString());
+            lock (_lock)
+            {
+                dtPallets.Clear();
+                dtPallets.Merge(CommonBL.getCombo(Program.userID, 3, Program.stationID.ToString()));  // ✅ refills safely
+            }
+            //dtPallets = CommonBL.getCombo(Program.userID, 3, Program.stationID.ToString());
             cmbPallet.DataSource = dtPallets;
             cmbPallet.DisplayMember = "PalletNo";
             cmbPallet.ValueMember = "ID";
@@ -123,7 +139,12 @@ namespace SPC_KDL
         }
         private void EventCombo()
         {
-            dtEvents = CommonBL.getCombo(Program.userID, 2, Program.stationID.ToString());
+            lock (_lock)
+            {
+                dtEvents.Clear();
+                dtEvents.Merge(CommonBL.getCombo(Program.userID, 2, Program.stationID.ToString()));  // ✅ refills safely
+            }
+            //dtEvents = CommonBL.getCombo(Program.userID, 2, Program.stationID.ToString());
             cmbEvent.DataSource = dtEvents;
             cmbEvent.DisplayMember = "Name";
             cmbEvent.ValueMember = "ID";
@@ -148,7 +169,12 @@ namespace SPC_KDL
         {
             if(cmbMachine.Text != "")
             {
-                dtCharacteristics = GetModifyData_Characteristics();
+                lock (_lock)
+                {
+                    dtCharacteristics.Clear();
+                    dtCharacteristics.Merge(GetModifyData_Characteristics());
+                }
+                //dtCharacteristics = GetModifyData_Characteristics();
                 cmbCharacteristics.DataSource = dtCharacteristics;
                 cmbCharacteristics.DisplayMember = "CharacteristicName";
                 cmbCharacteristics.ValueMember = "ID";
@@ -245,7 +271,12 @@ namespace SPC_KDL
         }
         private void ShiftCombo()
         {
-            dtShifts = CommonBL.getCombo(Program.userID, 6, Program.stationID.ToString());
+            lock (_lock)
+            {
+                dtShifts.Clear();
+                dtShifts.Merge(CommonBL.getCombo(Program.userID, 6, Program.stationID.ToString()));  // ✅ refills safely
+            }
+            //dtShifts = CommonBL.getCombo(Program.userID, 6, Program.stationID.ToString());
             cmbShift.DataSource = dtShifts;
             cmbShift.DisplayMember = "ShiftName";
             cmbShift.ValueMember = "ID";
@@ -279,8 +310,10 @@ namespace SPC_KDL
 
                };
 
-                CommonBL.InsertData("spInsert_EventInspectionData", parameters); //spInsert_TracebilityData
+                /*CommonBL.InsertData("spInsert_EventInspectionData", parameters);*/ //spInsert_TracebilityData
                                                                                  // Close(); //Aamir - 16/09/2022
+
+                CommonBL.InsertData(StoredProcedure.InsertEventInspectionData, parameters);
 
                 string errMsg = outParam_1.Value.ToString();
 

@@ -182,7 +182,10 @@ namespace SPC_KDL
               };
 
             DataTable dt = new DataTable();
-            dt = CommonBL.GetModifyData("sp_GetChartData_DE", parameters);
+            //dt = CommonBL.GetModifyData("sp_GetChartData_DE", parameters);
+            dt = CommonBL.GetModifyData(StoredProcedure.GetChartDataDE, parameters);
+
+
 
             dgvDatatable.DataSource = dt;
 
@@ -781,7 +784,8 @@ namespace SPC_KDL
                         outparam_1, //add on 29/06/23
                     };
 
-                                        CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                        //CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                        CommonBL.InsertData(StoredProcedure.InsertInspectionData, parameters);
 
                                         var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
 
@@ -854,7 +858,8 @@ namespace SPC_KDL
 
                                             };
 
-                                        CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                        //CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                        CommonBL.InsertData(StoredProcedure.InsertInspectionData, parameters);
 
                                         var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
 
@@ -1083,8 +1088,9 @@ namespace SPC_KDL
                                             outparam_1, //Add on 29/06/23
                                       };
 
-                                    CommonBL.InsertData("spInsert_InspectionData", parameters);
-                                    frmEventSelection.Close();
+                                //CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                CommonBL.InsertData(StoredProcedure.InsertInspectionData, parameters);
+                                frmEventSelection.Close();
 
                                     var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
                                     string msg = outparam_1.Value.ToString(); // Add on 29/06/23
@@ -1193,8 +1199,9 @@ namespace SPC_KDL
 
                                       };
 
-                                    CommonBL.InsertData("spInsert_InspectionData", parameters);
-                                    frmEventSelection.Close();
+                                //CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                CommonBL.InsertData(StoredProcedure.InsertInspectionData, parameters);
+                                frmEventSelection.Close();
 
                                     var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
                                     string msg = outparam_1.Value.ToString(); // Add on 29/06/23
@@ -1301,8 +1308,9 @@ namespace SPC_KDL
                                             outparam_1,  //Add on 29/06/23
                                       };
 
-                                    CommonBL.InsertData("spInsert_InspectionData", parameters);
-                                    frmEventSelection.Close();
+                                //CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                CommonBL.InsertData(StoredProcedure.InsertInspectionData, parameters);
+                                frmEventSelection.Close();
 
                                     var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
                                     string msg = outparam_1.Value.ToString(); // Add on 29/06/23
@@ -1408,8 +1416,9 @@ namespace SPC_KDL
                                             outparam_1, //Add on 29/06/23
                                       };
 
-                                    CommonBL.InsertData("spInsert_InspectionData", parameters);
-                                    frmEventSelection.Close();
+                                //CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                CommonBL.InsertData(StoredProcedure.InsertInspectionData, parameters);
+                                frmEventSelection.Close();
 
                                     var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
                                     string msg = outparam_1.Value.ToString(); // Add on 29/06/23
@@ -1501,9 +1510,10 @@ namespace SPC_KDL
                                   
                                  };
 
-                                CommonBL.InsertData("spInsert_InspectionData", parameters);
+                            //CommonBL.InsertData("spInsert_InspectionData", parameters);
+                            CommonBL.InsertData(StoredProcedure.InsertInspectionData, parameters);
 
-                                var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
+                            var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
                             string msg = outparam_1.Value.ToString(); // Add on 29/06/23
 
                             if (msg == "") // Add on 29/06/23
@@ -1572,7 +1582,8 @@ namespace SPC_KDL
             };
 
             DataSet ds = new DataSet();
-            ds = CommonBL.GetTemplateQueueData("spGetTempate_List", parameters);
+            //ds = CommonBL.GetTemplateQueueData("spGetTempate_List", parameters);
+            ds = CommonBL.GetTemplateQueueData(StoredProcedure.GetTemplateList, parameters);
             return ds;
         }
         
@@ -1585,7 +1596,9 @@ namespace SPC_KDL
             };
 
             DataSet ds = new DataSet();
-            ds = CommonBL.GetTemplateQueueData("spGetStation_Machine_List", parameters);
+            //ds = CommonBL.GetTemplateQueueData("spGetStation_Machine_List", parameters);
+            ds = CommonBL.GetTemplateQueueData(StoredProcedure.GetStationMachineList, parameters);
+
             return ds;
         }
         //14/06/23>>
@@ -1616,7 +1629,8 @@ namespace SPC_KDL
             };
 
             DataSet ds = new DataSet();
-            ds = CommonBL.GetTemplateQueueData("spGetTemplate_InspectionHdrData", parameters);
+            //ds = CommonBL.GetTemplateQueueData("spGetTemplate_InspectionHdrData", parameters);
+            ds = CommonBL.GetTemplateQueueData(StoredProcedure.GetTemplateInspectionHdrData, parameters);
             return ds;
         }
 
@@ -2574,7 +2588,8 @@ namespace SPC_KDL
                         outparam_1, //Add on 29/06/23
                     };
 
-                                CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                //CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                CommonBL.InsertData(StoredProcedure.InsertInspectionData, parameters);
 
                                 var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
 
@@ -2642,7 +2657,8 @@ namespace SPC_KDL
                         outparam_1, //Add on 03/07/23
                     };
 
-                                CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                //CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                CommonBL.InsertData(StoredProcedure.InsertInspectionData, parameters);
 
                                 var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
                                 string msg = outparam_1.Value.ToString(); // Add on 29/06/23
@@ -2775,7 +2791,8 @@ namespace SPC_KDL
                                             outparam_1, //Add on 29/06/23
                                            };
 
-                                        CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                        //CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                        CommonBL.InsertData(StoredProcedure.InsertInspectionData, parameters);
                                         frmEventSelection.Close();
 
                                         var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
@@ -2876,7 +2893,8 @@ namespace SPC_KDL
                                             outparam_1, //Add on 29/06/23
                                             };
 
-                                        CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                        //CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                        CommonBL.InsertData(StoredProcedure.InsertInspectionData, parameters);
                                         frmEventSelection.Close();
 
                                         var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
@@ -2976,7 +2994,8 @@ namespace SPC_KDL
                                             outparam_1, //Add on 29/06/23
                                       };
 
-                                        CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                        //CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                        CommonBL.InsertData(StoredProcedure.InsertInspectionData, parameters);
                                         frmEventSelection.Close();
 
                                         var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
@@ -3074,7 +3093,8 @@ namespace SPC_KDL
                                             outparam_1,  //Add on 29/06/23
                                             };
 
-                                        CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                        //CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                        CommonBL.InsertData(StoredProcedure.InsertInspectionData, parameters);
                                         frmEventSelection.Close();
 
                                         var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
@@ -3152,7 +3172,8 @@ namespace SPC_KDL
 
                              };
 
-                                    CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                    //CommonBL.InsertData("spInsert_InspectionData", parameters);
+                                    CommonBL.InsertData(StoredProcedure.InsertInspectionData, parameters);
 
                                     var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
 
@@ -3279,7 +3300,8 @@ namespace SPC_KDL
                       new SqlParameter{ParameterName = "@CharacterID", SqlDbType = SqlDbType.Int, Value = charID  },
                       };
 
-                            CommonBL.InsertData("Sp_RetakeDAta", parameters);
+                            //CommonBL.InsertData("Sp_RetakeDAta", parameters);
+                            CommonBL.InsertData(StoredProcedure.RetakeData, parameters);
 
                             var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
 
@@ -3298,7 +3320,8 @@ namespace SPC_KDL
                       new SqlParameter{ParameterName = "@CharacterID", SqlDbType = SqlDbType.Int, Value = 0  },
                       };
 
-                            CommonBL.InsertData("Sp_RetakeDAta", parameters);
+                            //CommonBL.InsertData("Sp_RetakeDAta", parameters);
+                            CommonBL.InsertData(StoredProcedure.RetakeData, parameters);
 
                             var mdiform = Application.OpenForms.OfType<MDISPC>().FirstOrDefault();
 
@@ -4632,8 +4655,9 @@ namespace SPC_KDL
                 controlChartClicked = 0;
 
                 DataSet ds = new DataSet();
-                ds = CommonBL.GetTemplateQueueData("sp_GetChartData_Win", parameters); //sp_GetChartData
-                return ds;
+            //ds = CommonBL.GetTemplateQueueData("sp_GetChartData_Win", parameters); //sp_GetChartData
+            ds = CommonBL.GetTemplateQueueData(StoredProcedure.GetChartDataWin, parameters);
+            return ds;
            // } //Added by Aamir - 04/03/2023
            
         }
@@ -4667,7 +4691,8 @@ namespace SPC_KDL
               };
 
                 DataTable dt = new DataTable();
-                dt = CommonBL.GetModifyData("sp_GetChartData_DE", parameters);
+                //dt = CommonBL.GetModifyData("sp_GetChartData_DE", parameters);
+                dt = CommonBL.GetModifyData(StoredProcedure.GetChartDataDE, parameters);
 
                 dgvDatatable.DataSource = dt;
             }

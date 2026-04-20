@@ -20,8 +20,8 @@ namespace SPC_KDL
         }
 
         #region VariableDeclaration
-        public static DataTable dtPartNo = new DataTable();
-        public static DataTable dtTemplates = new DataTable();
+        private readonly DataTable dtPartNo = new DataTable();
+        private readonly DataTable dtTemplates = new DataTable();
         private bool goForSaveUpdate = false;
         #endregion
         private void frmRemovePartNo_Load(object sender, EventArgs e)
@@ -43,7 +43,8 @@ namespace SPC_KDL
         //}
         private void TemplateCombo()
         {
-            dtTemplates = GetTemplate();
+            dtTemplates.Clear();
+            dtTemplates.Merge(GetTemplate());
             cmbTemplate.DataSource = dtTemplates;
             cmbTemplate.DisplayMember = "Name";
             cmbTemplate.ValueMember = "ID";
@@ -59,9 +60,9 @@ namespace SPC_KDL
                   //outParam_1
               };
 
-            DataTable dt = new DataTable();
-            dt = CommonBL.GetModifyData("sp_getDataToRemovePartInspectionQueue", parameters);
-            return dt;
+            //return CommonBL.GetModifyData("sp_getDataToRemovePartInspectionQueue", parameters);
+            return CommonBL.GetModifyData(StoredProcedure.GetDataToRemovePartInspectionQueue, parameters);
+
         }
         private void cmbTemplate_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -72,7 +73,8 @@ namespace SPC_KDL
         }
         private void PartNoCombo()
         {
-            dtPartNo = GetPartNo();
+            dtPartNo.Clear();
+            dtPartNo.Merge(GetPartNo());
             cmbPartNo.DataSource = dtPartNo;
             cmbPartNo.DisplayMember = "PartNo";
             cmbPartNo.ValueMember = "PartNo";
@@ -87,9 +89,9 @@ namespace SPC_KDL
                   //outParam_1
               };
 
-            DataTable dt = new DataTable();
-            dt = CommonBL.GetModifyData("sp_getDataToRemovePartInspectionQueue", parameters);
-            return dt;
+            //return CommonBL.GetModifyData("sp_getDataToRemovePartInspectionQueue", parameters);
+            return CommonBL.GetModifyData(StoredProcedure.GetDataToRemovePartInspectionQueue, parameters);
+
         }
 
         private bool fnValidate()
@@ -140,7 +142,8 @@ namespace SPC_KDL
 
                };
 
-                CommonBL.InsertData("Sp_RemovePartInQueue", parameters); //spInsert_TracebilityData
+                //CommonBL.InsertData("Sp_RemovePartInQueue", parameters); //spInsert_TracebilityData
+                CommonBL.InsertData(StoredProcedure.RemovePartInQueue, parameters);
 
                 //string errMsg = outParam_1.Value.ToString();
 

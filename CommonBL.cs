@@ -14,24 +14,24 @@ namespace SPC_KDL
         {
             return CommonDL.getCombo(UserID, ActionID, keyValue, ModelNo);
         }
-        public static int InsertData(string spName, SqlParameter[] paramters)
+        public static int InsertData(StoredProcedure sp, SqlParameter[] parameters)
         {
-            return CommonDL.InsertData(spName, paramters);
+            return CommonDL.InsertData(sp, parameters);
         }
 
-         public static DataSet GetTemplateQueueData(string spName, SqlParameter[] parameters)
+        public static DataSet GetTemplateQueueData(StoredProcedure sp, SqlParameter[] parameters)
         {
-            return CommonDL.GetTemplateQueueData(spName, parameters);
+            return CommonDL.GetTemplateQueueData(sp, parameters);
         }
 
-        public static DataTable GetModifyData(string spName, SqlParameter[] parameters)
+        public static DataTable GetModifyData(StoredProcedure sp, SqlParameter[] parameters)
         {
-            return CommonDL.GetModifyData(spName, parameters);
+            return CommonDL.GetModifyData(sp, parameters);
         }
 
-        public static DataTable GetDataTable(string spName, SqlParameter[] parameters)
+        public static DataTable GetDataTable(StoredProcedure sp, SqlParameter[] parameters)
         {
-            return CommonDL.GetModifyData(spName, parameters);
+            return CommonDL.GetDataTable(sp, parameters);
         }
     }
 }
