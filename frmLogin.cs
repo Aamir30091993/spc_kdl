@@ -15,6 +15,8 @@ namespace SPC_KDL
 {
     public partial class frmLogin : Form
     {
+        //Old login form check for git vulerab
+
       //  DBConnect call = new DBConnect();
         SqlConnection gcon = new SqlConnection();
         DataTable dt;
