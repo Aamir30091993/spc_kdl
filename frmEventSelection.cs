@@ -88,8 +88,9 @@ namespace SPC_KDL
                   //outParam_1
               };
 
-            return CommonBL.GetModifyData("sp_GetEventMsg", parameters);
-      
+            //return CommonBL.GetModifyData("sp_GetEventMsg", parameters);
+            return CommonBL.GetModifyData(StoredProcedure.GetEventMsg, parameters);
+
         }
 
         private void frmEventSelection_FormClosing(object sender, FormClosingEventArgs e)

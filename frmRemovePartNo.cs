@@ -60,8 +60,9 @@ namespace SPC_KDL
                   //outParam_1
               };
 
-            return CommonBL.GetModifyData("sp_getDataToRemovePartInspectionQueue", parameters);
-           
+            //return CommonBL.GetModifyData("sp_getDataToRemovePartInspectionQueue", parameters);
+            return CommonBL.GetModifyData(StoredProcedure.GetDataToRemovePartInspectionQueue, parameters);
+
         }
         private void cmbTemplate_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -88,8 +89,9 @@ namespace SPC_KDL
                   //outParam_1
               };
 
-            return CommonBL.GetModifyData("sp_getDataToRemovePartInspectionQueue", parameters);
-            
+            //return CommonBL.GetModifyData("sp_getDataToRemovePartInspectionQueue", parameters);
+            return CommonBL.GetModifyData(StoredProcedure.GetDataToRemovePartInspectionQueue, parameters);
+
         }
 
         private bool fnValidate()
@@ -140,7 +142,8 @@ namespace SPC_KDL
 
                };
 
-                CommonBL.InsertData("Sp_RemovePartInQueue", parameters); //spInsert_TracebilityData
+                //CommonBL.InsertData("Sp_RemovePartInQueue", parameters); //spInsert_TracebilityData
+                CommonBL.InsertData(StoredProcedure.RemovePartInQueue, parameters);
 
                 //string errMsg = outParam_1.Value.ToString();
 

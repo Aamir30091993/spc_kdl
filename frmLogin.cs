@@ -128,19 +128,46 @@ namespace SPC_KDL
                     return;
                 }
 
+                //NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
+                //string sMacAddress = string.Empty;
+                //foreach (NetworkInterface adapter in nics)
+                //{
+                //    if (adapter.Name.Contains("Ethernet") && adapter.OperationalStatus.ToString() == "Up") //adapter.Name == "Ethernet"
+                //    {
+                //        if (sMacAddress == string.Empty)// only return MAC Address from first card  
+                //        {
+                //            IPInterfaceProperties properties = adapter.GetIPProperties();
+                //            sMacAddress = adapter.GetPhysicalAddress().ToString();
+                //        }
+                //    }
+                //}
+                //string MAC = sMacAddress;
+                //Program.mac = MAC;
                 NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
                 string sMacAddress = string.Empty;
+
                 foreach (NetworkInterface adapter in nics)
                 {
-                    if (adapter.Name.Contains("Ethernet") && adapter.OperationalStatus.ToString() == "Up") //adapter.Name == "Ethernet"
+                    if (adapter.NetworkInterfaceType == NetworkInterfaceType.Loopback ||
+                        adapter.NetworkInterfaceType == NetworkInterfaceType.Tunnel)
+                        continue;
+                    string desc = adapter.Description.ToLower();
+                    if (desc.Contains("fortinet") || desc.Contains("virtual") ||
+                        desc.Contains("tap") || desc.Contains("vpn") ||
+                        desc.Contains("pseudo"))
+                        continue;
+
+                    string mac = adapter.GetPhysicalAddress().ToString();
+                    if (string.IsNullOrEmpty(mac) || mac == "000000000000")
+                        continue;
+
+                    if (adapter.OperationalStatus == OperationalStatus.Up)
                     {
-                        if (sMacAddress == string.Empty)// only return MAC Address from first card  
-                        {
-                            IPInterfaceProperties properties = adapter.GetIPProperties();
-                            sMacAddress = adapter.GetPhysicalAddress().ToString();
-                        }
+                        sMacAddress = mac;
+                        break; 
                     }
                 }
+
                 string MAC = sMacAddress;
                 Program.mac = MAC;
 

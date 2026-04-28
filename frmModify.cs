@@ -124,7 +124,8 @@ namespace SPC_KDL
                   new SqlParameter{ParameterName="@ActionID",SqlDbType =SqlDbType.Int, Value =  1}, 
                   //outParam_1
               };
-            return CommonBL.GetModifyData("sp_getDataToModify", parameters);
+            //return CommonBL.GetModifyData("sp_getDataToModify", parameters);
+            return CommonBL.GetModifyData(StoredProcedure.GetDataToModify, parameters);
 
         }
         private DataTable GetModifyData_Characteristics()
@@ -139,7 +140,8 @@ namespace SPC_KDL
                   //outParam_1
               };
 
-            return CommonBL.GetModifyData("sp_getDataToModify", parameters);
+            //return CommonBL.GetModifyData("sp_getDataToModify", parameters);
+            return CommonBL.GetModifyData(StoredProcedure.GetDataToModify, parameters);
 
         }
         private DataTable GetModifyData_Reading()
@@ -155,7 +157,8 @@ namespace SPC_KDL
                   //outParam_1
               };
 
-            return CommonBL.GetModifyData("sp_getDataToModify", parameters);
+            //return CommonBL.GetModifyData("sp_getDataToModify", parameters);
+            return CommonBL.GetModifyData(StoredProcedure.GetDataToModify, parameters);
 
         }
         private void cmbTemplate_SelectionChangeCommitted(object sender, EventArgs e)
@@ -283,7 +286,8 @@ namespace SPC_KDL
 
                };
 
-                CommonBL.InsertData("Sp_UpdateModifyData", parameters);
+                //CommonBL.InsertData("Sp_UpdateModifyData", parameters);
+                CommonBL.InsertData(StoredProcedure.UpdateModifyData, parameters);
 
                 //Close();
 

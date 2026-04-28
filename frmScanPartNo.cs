@@ -421,121 +421,222 @@ namespace SPC_KDL
                 return false;
             }
         }
+        //commeted by kanhaiya - 24/03/2026 -- added below
+        //private bool fnreValidate() //Modified by Aamir - 12/06/2024
+        //{
+        //   // errorProvider1.Clear();
+        //    bool ret = true;
 
-        private bool fnreValidate() //Modified by Aamir - 12/06/2024
+        //    if (cmbTemplate.Enabled == true)
+        //    {
+        //        if (cmbTemplate.Text != "")
+        //        {
+        //            errorProvider1.SetError(cmbTemplate, "");
+        //            // ret = false;
+        //        }
+        //    }
+
+        //    //if (cmbEvent.Text == "")
+        //    //{
+        //    //    errorProvider1.SetError(cmbEvent, "Please select Event");
+        //    //    ret = false;
+        //    //}
+
+        //    if (cmbShift.Enabled == true)
+        //    {
+        //        if (cmbShift.Text != "")
+        //        {
+        //            errorProvider1.SetError(cmbShift, "");
+        //            //ret = false;
+        //        }
+        //    }
+
+        //    if (txtOperatorName.Enabled == true)
+        //    {
+        //        if (txtOperatorName.Text != "")
+        //        {
+        //            errorProvider1.SetError(txtOperatorName, "");
+        //            // ret = false;
+        //        }
+        //    }
+
+        //    if (cmbMachineNo.Enabled == true)
+        //    {
+        //        if (cmbMachineNo.Text != "")
+        //        {
+        //            errorProvider1.SetError(cmbMachineNo, "");
+        //            // ret = false;
+        //        }
+        //    }
+
+        //    if (cmbPalletNo.Enabled == true)
+        //    {
+        //        if (cmbPalletNo.Text != "")
+        //        {
+        //            errorProvider1.SetError(cmbPalletNo, "");
+        //            //  ret = false;
+        //        }
+        //    }
+
+        //    if (txtPartNo.Enabled == true)
+        //    {
+        //        if (txtPartNo.Text != "")
+        //        {
+        //            errorProvider1.SetError(txtPartNo, "");
+        //            //  ret = false;
+        //        }
+        //    }
+
+        //    if (txtModelNo.Enabled == true)
+        //    {
+        //        if (txtModelNo.Text != "")
+        //        {
+        //            errorProvider1.SetError(txtModelNo, "");
+        //            //   ret = false;
+        //        }
+        //    }
+        //    //Aamir - 19/01/2023
+        //    if (cmbDotSpec.Visible == true)
+        //    {
+        //        if (cmbDotSpec.Enabled == true)
+        //        {
+        //            if (cmbDotSpec.Text != "")
+        //            {
+        //                errorProvider1.SetError(cmbDotSpec, "");
+        //                //ret = false;
+        //            }
+        //        }
+        //    }
+        //    //Aamir - 19/01/2023
+        //    if (txtModelSAPNo.Enabled == true)
+        //    {
+        //        if (txtModelSAPNo.Text != "")
+        //        {
+        //            errorProvider1.SetError(txtModelSAPNo, "");
+        //            // ret = false;
+        //        }
+        //    }
+
+        //    if (cmbSemifinishSupplierwise.Enabled == true)
+        //    {
+        //        if (cmbSemifinishSupplierwise.Text != "")
+        //        {
+        //            errorProvider1.SetError(cmbSemifinishSupplierwise, "");
+        //            // ret = false;
+        //        }
+        //    }
+
+
+        //    if (ret)
+        //    {
+        //        return ret;
+
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
+        private bool fnreValidate()
         {
-           // errorProvider1.Clear();
+            errorProvider1.Clear();
             bool ret = true;
 
             if (cmbTemplate.Enabled == true)
             {
-                if (cmbTemplate.Text != "")
+                if (string.IsNullOrWhiteSpace(cmbTemplate.Text))
                 {
-                    errorProvider1.SetError(cmbTemplate, "");
-                    // ret = false;
+                    errorProvider1.SetError(cmbTemplate, "Please select Template");
+                    ret = false;
                 }
             }
 
-            //if (cmbEvent.Text == "")
-            //{
-            //    errorProvider1.SetError(cmbEvent, "Please select Event");
-            //    ret = false;
-            //}
-
             if (cmbShift.Enabled == true)
             {
-                if (cmbShift.Text != "")
+                if (string.IsNullOrWhiteSpace(cmbShift.Text))
                 {
-                    errorProvider1.SetError(cmbShift, "");
-                    //ret = false;
+                    errorProvider1.SetError(cmbShift, "Please select Shift");
+                    ret = false;
                 }
             }
 
             if (txtOperatorName.Enabled == true)
             {
-                if (txtOperatorName.Text != "")
+                if (string.IsNullOrWhiteSpace(txtOperatorName.Text))
                 {
-                    errorProvider1.SetError(txtOperatorName, "");
-                    // ret = false;
+                    errorProvider1.SetError(txtOperatorName, "Please enter Operator Name");
+                    ret = false;
                 }
             }
 
             if (cmbMachineNo.Enabled == true)
             {
-                if (cmbMachineNo.Text != "")
+                if (string.IsNullOrWhiteSpace(cmbMachineNo.Text))
                 {
-                    errorProvider1.SetError(cmbMachineNo, "");
-                    // ret = false;
+                    errorProvider1.SetError(cmbMachineNo, "Please select Machine No");
+                    ret = false;
                 }
             }
 
             if (cmbPalletNo.Enabled == true)
             {
-                if (cmbPalletNo.Text != "")
+                if (string.IsNullOrWhiteSpace(cmbPalletNo.Text))
                 {
-                    errorProvider1.SetError(cmbPalletNo, "");
-                    //  ret = false;
+                    errorProvider1.SetError(cmbPalletNo, "Please select Pallet No");
+                    ret = false;
                 }
             }
 
             if (txtPartNo.Enabled == true)
             {
-                if (txtPartNo.Text != "")
+                if (string.IsNullOrWhiteSpace(txtPartNo.Text))
                 {
-                    errorProvider1.SetError(txtPartNo, "");
-                    //  ret = false;
+                    errorProvider1.SetError(txtPartNo, "Please enter Part No");
+                    ret = false;
                 }
             }
 
             if (txtModelNo.Enabled == true)
             {
-                if (txtModelNo.Text != "")
+                if (string.IsNullOrWhiteSpace(txtModelNo.Text))
                 {
-                    errorProvider1.SetError(txtModelNo, "");
-                    //   ret = false;
+                    errorProvider1.SetError(txtModelNo, "Please enter Model No");
+                    ret = false;
                 }
             }
+
             //Aamir - 19/01/2023
             if (cmbDotSpec.Visible == true)
             {
                 if (cmbDotSpec.Enabled == true)
                 {
-                    if (cmbDotSpec.Text != "")
+                    if (string.IsNullOrWhiteSpace(cmbDotSpec.Text))
                     {
-                        errorProvider1.SetError(cmbDotSpec, "");
-                        //ret = false;
+                        errorProvider1.SetError(cmbDotSpec, "Please select Dot Spec");
+                        ret = false;
                     }
                 }
             }
-            //Aamir - 19/01/2023
+
             if (txtModelSAPNo.Enabled == true)
             {
-                if (txtModelSAPNo.Text != "")
+                if (string.IsNullOrWhiteSpace(txtModelSAPNo.Text))
                 {
-                    errorProvider1.SetError(txtModelSAPNo, "");
-                    // ret = false;
+                    errorProvider1.SetError(txtModelSAPNo, "Please enter Model SAP No");
+                    ret = false;
                 }
             }
 
             if (cmbSemifinishSupplierwise.Enabled == true)
             {
-                if (cmbSemifinishSupplierwise.Text != "")
+                if (string.IsNullOrWhiteSpace(cmbSemifinishSupplierwise.Text))
                 {
-                    errorProvider1.SetError(cmbSemifinishSupplierwise, "");
-                    // ret = false;
+                    errorProvider1.SetError(cmbSemifinishSupplierwise, "Please select Semifinish Supplier");
+                    ret = false;
                 }
             }
 
-
-            if (ret)
-            {
-                return ret;
-
-            }
-            else
-            {
-                return false;
-            }
+            return ret;
         }
         #endregion
         #region Functional Functions
@@ -577,7 +678,8 @@ namespace SPC_KDL
                   outParam_2,           
                };
 
-                CommonBL.InsertData("spInsert_TracebilityData", parameters); //spInsert_TracebilityData
+                //CommonBL.InsertData("spInsert_TracebilityData", parameters); //spInsert_TracebilityData
+                CommonBL.InsertData(StoredProcedure.InsertTraceabilityData, parameters);
 
                 string errMsg = outParam_1.Value.ToString();   
 
@@ -681,78 +783,61 @@ namespace SPC_KDL
         }
         private void txtPartNo_KeyDown(object sender, KeyEventArgs e)
         {
-            if (txtPartNo != null)
+            if (e.KeyCode != Keys.Enter)
+                return;
+
+            if (string.IsNullOrWhiteSpace(txtPartNo?.Text))
+                return;
+
+            partNo = "";
+            extractedPartNo = "";
+            extractedModelNo = "";
+            partNo = txtPartNo.Text;
+
+            if (partNo.Contains(':'))
             {
-                if (txtPartNo.Text != null)
+                extractedModelNo = partNo.Split(':')[1];
+                txtPartNo.Text = "";
+                txtPartNo.Text = partNo;
+                txtModelNo.Text = extractedModelNo;
+
+                //Aamir - 19/01/2023
+                if ((machineWisePalletWise == 0 && templateWiseModelWise == 1)
+                    || (machineWisePalletWise == 1 && templateWiseModelWise == 1))
                 {
-                    if (txtPartNo.Text != "")
+                    SqlParameter[] parameters =
                     {
-                        if (e.KeyCode == Keys.Enter)
-                        {
-
-                            //Aamir - TODO
-                            // string partNo = "409:0302abh00280n:a004:240322:02:08051";
-
-                             partNo = "";
-                             extractedPartNo = "";
-                             extractedModelNo = "";
-
-                            partNo  = txtPartNo.Text;
-
-                            if (partNo.Contains(':'))
-                            {
-                               // extractedPartNo = partNo.Split(':')[5];
-                                extractedModelNo = partNo.Split(':')[1];
-
-                                txtPartNo.Text = "";
-                                txtPartNo.Text = partNo; //extractedPartNo;
-                                txtModelNo.Text = extractedModelNo;
-
-                                //Aamir - 19/01/2023
-                                 if ((machineWisePalletWise == 0 && templateWiseModelWise == 1) || (machineWisePalletWise == 1 && templateWiseModelWise == 1) ) //Case 2 and Case 1
-                                {
-                                      SqlParameter[] parameters =
-                                      {
-                                          new SqlParameter{ParameterName = "@ModelNo", SqlDbType = SqlDbType.VarChar,Size = 50,  Value = extractedModelNo},
-                                          new SqlParameter{ParameterName = "@StationID", SqlDbType = SqlDbType.Int,  Value = Program.stationID},
-                                          //outParam_1
-                                        };
-
-                                    var dt = CommonBL.GetModifyData("pgetTemplate", parameters);
-
-
-                                    if (dt.Rows.Count > 0)
-                                    {
-                                        cmbTemplate.DataSource = dt;
-                                        cmbTemplate.DisplayMember = "Name";
-                                        cmbTemplate.ValueMember = "ID";
-                                    }
-
-
-                                }
-                                //Aamir - 19/01/2023
-
-                                // Thread.Sleep(3000); //TODO
-
-                                if (machineWisePalletWise == 1 && templateWiseModelWise == 1)
-                                {
-                                   
-                                    cmbDotSpec.Enabled = true;
-                                    DotCombo();
-                                    cmbDotSpec.Focus();
-                                }
-
-                                else
-                                {
-                                    btnSave.PerformClick();
-                                }
-                            }
-
-                            fnreValidate();
-                           // btnSave.PerformClick();
-                        }
+                new SqlParameter { ParameterName = "@ModelNo", SqlDbType = SqlDbType.VarChar, Size = 50, Value = extractedModelNo },
+                new SqlParameter { ParameterName = "@StationID", SqlDbType = SqlDbType.Int, Value = Program.stationID },
+            };
+                    //var dt = CommonBL.GetModifyData("pgetTemplate", parameters);
+                    var dt = CommonBL.GetModifyData(StoredProcedure.GetTemplateData, parameters);
+                    if (dt.Rows.Count > 0)
+                    {
+                        cmbTemplate.DataSource = dt;
+                        cmbTemplate.DisplayMember = "Name";
+                        cmbTemplate.ValueMember = "ID";
                     }
                 }
+
+                if (!fnreValidate())
+                    return;
+
+                if (machineWisePalletWise == 1 && templateWiseModelWise == 1)
+                {
+                    cmbDotSpec.Enabled = true;
+                    DotCombo();
+                    cmbDotSpec.Focus();
+                }
+                else
+                {
+                    btnSave.PerformClick();
+                }
+            }
+            else
+            {
+                if (!fnreValidate())
+                    return;
             }
         }
 
@@ -767,7 +852,8 @@ namespace SPC_KDL
                   //outParam_1
               };
 
-            return CommonBL.GetModifyData("sp_check_config", parameters);
+            //return CommonBL.GetModifyData("sp_check_config", parameters);
+            return CommonBL.GetModifyData(StoredProcedure.CheckConfig, parameters);
 
 
         }
@@ -868,14 +954,11 @@ namespace SPC_KDL
         //Added by Aamir - 03/03/2023
         private void frmScanPartNo_KeyDown(object sender, KeyEventArgs e)
         {
-
-            //if ((((TextBox )sender).Name) == "txtPartNo")
-
-            //var name = this.ActiveControl.Name;
-
             if (e.KeyCode == Keys.Enter)
             {
-                fnreValidate();
+                if (!fnreValidate())
+                    return;
+
                 if (fnValidate())
                 {
                     btnSave.PerformClick();

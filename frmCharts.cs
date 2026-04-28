@@ -981,8 +981,9 @@ namespace SPC_KDL
 
             //controlChartClicked = 0;
 
-            return CommonBL.GetTemplateQueueData("sp_GetChartData", parameters); //sp_GetChartData
-          
+            //return CommonBL.GetTemplateQueueData("sp_GetChartData", parameters); //sp_GetChartData
+            return CommonBL.GetTemplateQueueData(StoredProcedure.GetChartData, parameters);
+
 
         }
         private void runChart()
@@ -1686,8 +1687,9 @@ namespace SPC_KDL
 
             //controlChartClicked = 0;
 
-            return CommonBL.GetDataTable("sp_GetChartData_Export", parameters); //sp_GetChartData
-           
+            /*return CommonBL.GetDataTable("sp_GetChartData_Export", parameters);*/ //sp_GetChartData
+            return CommonBL.GetDataTable(StoredProcedure.GetChartDataExport, parameters);
+
         }
     }
 }

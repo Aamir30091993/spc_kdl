@@ -113,8 +113,9 @@ namespace SPC_KDL
                   //outParam_1
               };
 
-            return CommonBL.GetModifyData("sp_getDataForEvent", parameters);
-         
+            //return CommonBL.GetModifyData("sp_getDataForEvent", parameters);
+            return CommonBL.GetModifyData(StoredProcedure.GetDataForEvent, parameters);
+
         }
         private void PalletCombo()
         {
@@ -309,8 +310,10 @@ namespace SPC_KDL
 
                };
 
-                CommonBL.InsertData("spInsert_EventInspectionData", parameters); //spInsert_TracebilityData
+                /*CommonBL.InsertData("spInsert_EventInspectionData", parameters);*/ //spInsert_TracebilityData
                                                                                  // Close(); //Aamir - 16/09/2022
+
+                CommonBL.InsertData(StoredProcedure.InsertEventInspectionData, parameters);
 
                 string errMsg = outParam_1.Value.ToString();
 

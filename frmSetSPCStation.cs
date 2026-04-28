@@ -48,30 +48,19 @@ namespace SPC_KDL
         }
         public DataTable fnGetSPCStation()
         {
-            try
+            using (var con = DBConnect.connect())
+            using (var cmd = new SqlCommand("Sp_GetSPCStation", con))
             {
-                using (var con = DBConnect.connect())
-                {
-                    con.Open();
-                    using (var cmd = new SqlCommand("Sp_GetSPCStation", con))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add("@User_ID", SqlDbType.Int).Value = Program.userID;
-                        cmd.Parameters.Add("@mac_address", SqlDbType.VarChar, 200).Value = Program.mac;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@User_ID", SqlDbType.Int).Value = Program.userID;
+                cmd.Parameters.Add("@mac_address", SqlDbType.VarChar, 200).Value = Program.mac;
 
-                        using (var da = new SqlDataAdapter(cmd))
-                        {
-                            var dt = new DataTable();
-                            da.Fill(dt);
-                            return dt;
-                        }
-                    }
+                using (var da = new SqlDataAdapter(cmd))
+                {
+                    var dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return null;
             }
         }
 
@@ -80,30 +69,28 @@ namespace SPC_KDL
             try
             {
                 using (var con = DBConnect.connect())
+                using (var cmd = new SqlCommand("Sp_UpdateSPCStationMAcAddress", con))
                 {
-                    con.Open();
-                    using (var cmd = new SqlCommand("Sp_UpdateSPCStationMAcAddress", con))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add("@User_ID", SqlDbType.Int).Value = Program.userID;
-                        cmd.Parameters.Add("@Station_ID", SqlDbType.Int).Value = Convert.ToInt32(cmbSPCStation.SelectedValue);
-                        cmd.Parameters.Add("@mac_address", SqlDbType.VarChar, 200).Value = Program.mac;
-                        cmd.ExecuteNonQuery();
-                    }
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@User_ID", SqlDbType.Int).Value = Program.userID;
+                    cmd.Parameters.Add("@Station_ID", SqlDbType.Int).Value = Convert.ToInt32(cmbSPCStation.SelectedValue);
+                    cmd.Parameters.Add("@mac_address", SqlDbType.VarChar, 200).Value = Program.mac;
+
+                    cmd.ExecuteNonQuery();
                 }
 
-                var result = MessageBox.Show("SPC Station Saved Successfully", "SPC Station",
+                MessageBox.Show("SPC Station Saved Successfully", "SPC Station",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                if (result == DialogResult.OK)
-                {
-                    this.Close();
-                    new frmLogin().Show();
-                }
+                this.Close();
+                new frmLogin().Show();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Something went wrong: " + ex.Message);
             }
         }
         private void btnCancel_Click(object sender, EventArgs e)
